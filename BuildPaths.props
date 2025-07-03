@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+	<PropertyGroup>
+		<GorillaTagRootA>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag</GorillaTagRootA>
+		<GorillaTagRootB>D:\SteamLibrary\steamapps\common\Gorilla Tag</GorillaTagRootB>
+		<GorillaTagRootC>C:\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag</GorillaTagRootC>
+
+		<GorillaTagRoot Condition="Exists('$(GorillaTagRootA)')">$(GorillaTagRootA)</GorillaTagRoot>
+		<GorillaTagRoot Condition="'$(GorillaTagRoot)' == '' and Exists('$(GorillaTagRootB)')">$(GorillaTagRootB)</GorillaTagRoot>
+		<GorillaTagRoot Condition="'$(GorillaTagRoot)' == '' and Exists('$(GorillaTagRootC)')">$(GorillaTagRootC)</GorillaTagRoot>
+		
+		<AssemblyPath>$(GorillaTagRoot)\Gorilla Tag_Data\Managed</AssemblyPath>
+		<PluginsPath>$(GorillaTagRoot)\BepInEx\plugins</PluginsPath>
+
+</PropertyGroup>
+</Project>
